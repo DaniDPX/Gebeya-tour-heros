@@ -20,7 +20,11 @@ export class HeroService {
     return of (HEROES);
   }
 
-  setHeroes(){}
-
-
+  //This method fetch a single hero based on provided :id
+  getHero(id: number): Observable<Hero> {
+    this.messageService.add(`HeroService: fetched hero id=${id}`);
+    return of(HEROES.find(hero => hero.id === id));
+  }
+  
+  setHero(){}
 }

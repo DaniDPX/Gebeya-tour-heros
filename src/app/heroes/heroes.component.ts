@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Hero} from '../hero';
-import { HEROES } from '../mock-heroes';
 
 import { HeroService } from '../hero.service';
-
-
 
 
 @Component({
@@ -25,12 +22,9 @@ export class HeroesComponent implements OnInit {
       this.getHeroes();
   }
 
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-  }
-
   getHeroes(): void {
-    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);
 
     //this is the point where we get list of heroes from HeroService to HeroComponent
   }

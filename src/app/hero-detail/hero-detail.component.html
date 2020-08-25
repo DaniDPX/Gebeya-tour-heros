@@ -3,12 +3,18 @@
     <h2>{{hero.name | uppercase}} Details</h2>
     <div><span>id: </span>{{hero.id}}</div>
     <div>
-        <label>name:
-            <input [(ngModel)]="hero.name" placeholder="name" />
-        </label>
+        <!-- <label>name: -->
+            <!-- <input  placeholder="name" /> -->
+                <mat-form-field class="example-full-width">
+                <mat-label>Hero Name</mat-label>
+                <input [(ngModel)]="hero.name" matInput>
+              </mat-form-field>
+        <!-- </label> -->
     </div>
 
 </div>
 
 <button (click)="goBack()">go back</button>
 <button (click)="save()">save</button>
+
+<mat-slider min="1" max="100" step="1" value="1"></mat-slider>

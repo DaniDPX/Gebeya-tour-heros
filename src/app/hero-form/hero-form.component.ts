@@ -13,14 +13,18 @@ export class HeroFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  powers = ['Really Smart', 'Super Flexible',
-  'Super Hot', 'Weather Changer'];
+  powers = ['Really Smart', 'Super Flexible','Super Hot', 'Weather Changer'];
 
-  model = new Heron(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
+  model = new Heron(18, 'Gebeya', this.powers[0], 'Anything');
 
   submitted = false;
 
   onSubmit() { this.submitted = true; }
 
+  get diagnostic() { return JSON.stringify(this.model); }
+
+  newHero() {
+    this.model = new Heron(42, '', '');
+  }
 
 }

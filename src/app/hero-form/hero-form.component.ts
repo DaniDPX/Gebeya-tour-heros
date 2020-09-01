@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Heron } from '../heron';
 
 @Component({
   selector: 'app-hero-form',
@@ -11,5 +12,15 @@ export class HeroFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  powers = ['Really Smart', 'Super Flexible',
+  'Super Hot', 'Weather Changer'];
+
+  model = new Heron(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
+
+  submitted = false;
+
+  onSubmit() { this.submitted = true; }
+
 
 }
